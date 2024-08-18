@@ -7,3 +7,6 @@ export default defineConfig({
     base: "/homepage/",
     plugins: [react()],
 })
+
+- add the Dashboard on file called "Functiona" then just 
+contine with further instructions 

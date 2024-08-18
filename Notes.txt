@@ -1,3 +1,5 @@
+file name: vite.config.js  (Create and copy this if it gives you problems then)
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 

@@ -24,7 +24,7 @@ const Home = () => {
               <li>< Link to="/sales">Sales</Link></li>
               <li>Getting started</li>
             </ul>
-            <button onClick={toggleSignup}>Sign Up</button>
+ <button onClick={toggleSignup}>Sign Up</button> 
           </nav>
         </header>
         <div className='info'>
@@ -32,7 +32,7 @@ const Home = () => {
           <h1>with Track and Trace</h1>
           <p>Today’s supply chains involve manufacturers, suppliers, logistics companies, and retailers. As these chains grow, managing them becomes increasingly complex.</p>
           <p>Paper-based methods create silos and complicate tracking. Blockchain ensures traceability and reduces delays and errors.</p>
-          <button>Get started</button>
+          <Link to="/details"><button>Get started</button></Link>
         </div>
       </div>
       <Features />

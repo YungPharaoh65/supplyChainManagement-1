@@ -1,6 +1,7 @@
 {
   "homepage": "https://github.com/Tinyikoxyz/supplyChainManagement",
   "name": "hompage",
+  "base": "hompage",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,20 +9,23 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^10.12.1",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.2",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router": "^6.23.1",
+    "react-leaflet": "^4.2.1",
+    "react-router": "^6.26.1",
     "react-router-dom": "^6.23.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "start": "vite",
-  "build": "tsc && vite build",
-  "dev": "vite"
-},
-
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "dev": "vite"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

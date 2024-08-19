@@ -38,3 +38,12 @@ The main structures used to create the `Details` page in the provided code inclu
    - An HTML table (`<table>`) is used to display the list of delivery shipments, with columns for supplier name, order ID, sent time, received time, shipment price, and inventory levels.
 
 These structures together form the functional and visual layout of the `Details` page, allowing users to input and manage supply chain data.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+About: 
+
+The main structures used to create the `Details` page in the provided code include:
+
+1. **React Functional Component**:
+   - The entire page is encapsulated within a React functional component named `Details`.
+   - This component uses React hooks (`useState`) to manage the state of various form fields and data.
+
+2. **State Management**:
+   - Multiple pieces of state are managed using the `useState` hook, including:
+     - Text inputs (`companyName`, `username`, `password`, etc.)
+     - Checkboxes (`inventoryLevels`)
+     - File upload (`pdfFile`)
+     - An array to store multiple shipments (`deliveryShipments`)
+
+3. **Form Structure**:
+   - An HTML form (`<form>`) is used to collect user input. The form is structured with input fields, labels, and buttons.
+   - The `onSubmit` event handler is used to manage form submission.
+
+4. **Input Fields**:
+   - Various types of input fields are used, such as text inputs (`<input type="text">`), password inputs (`<input type="password">`), datetime inputs (`<input type="datetime-local">`), and file upload (`<input type="file">`).
+   - Checkboxes (`<input type="checkbox">`) are used for selecting multiple inventory levels.
+
+5. **Event Handling**:
+   - Event handlers such as `onChange`, `onSubmit`, and `onClick` are used to handle user interactions with the form fields.
+   - Example: `handleLogin`, `handleAddShipment`, `handleInventoryLevelChange`, and `handlePdfUpload`.
+
+6. **Conditional Rendering**:
+   - The page conditionally renders a table displaying the list of delivery shipments only if there are shipments in the `deliveryShipments` array.
+
+7. **Routing**:
+   - React Router's `Link` component is used for navigation, allowing users to move to different parts of the application (e.g., back to the home page or to the dashboard).
+
+8. **CSS Classes**:
+   - The page uses various CSS classes (e.g., `login-container`, `login-input`, `login-button`) to style the elements. The styles are assumed to be defined in the linked `details.css` file.
+
+9. **Table Structure**:
+   - An HTML table (`<table>`) is used to display the list of delivery shipments, with columns for supplier name, order ID, sent time, received time, shipment price, and inventory levels.
+
+These structures together form the functional and visual layout of the `Details` page, allowing users to input and manage supply chain data.

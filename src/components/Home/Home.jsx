@@ -5,12 +5,15 @@ import Faq from '../Faq/Faq';
 import Signup from '../Signup/Signup';
 import { Link } from 'react-router-dom';
 
+
 const Home = () => {
   const [showSignup, setShowSignup] = useState(false);
 
   const toggleSignup = () => {
     setShowSignup(!showSignup);
   };
+  
+  
 
   return (
     <div>

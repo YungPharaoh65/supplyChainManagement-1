@@ -7,6 +7,7 @@
     height:38.6rem;
     padding: 10px; 
     color: black;
+    background-color: rgb(229, 232, 235);
     
 }
 
@@ -20,8 +21,9 @@
     align-items: center;
     margin-left: 4rem;
 margin-top: -2rem;
-    background-color: rgb(171, 185, 182);
-     
+background: rgba(228, 223, 223, 0.5); /* Base background color */
+border: 1px solid rgb(51, 50, 50);
+    
 }
 
 .navbar2 {
@@ -33,8 +35,9 @@ margin-top: -2rem;
     margin-top: 1rem;
     height: 4rem;
 
-    background-color: rgb(100, 105, 104);
-     
+    background: rgba(228, 223, 223, 0.5); /* Base background color */
+    border: 1px solid rgb(51, 50, 50);
+    
 }
 
 .navbar-left {
@@ -80,34 +83,84 @@ margin-top: -2rem;
     font-size: 1.2rem;
       gap: -1rem;
       margin-left: 15rem;
+      
        
 }
 
-.box{
+.box {
     width: 25rem;
     height: 12rem;
-    background-color: rgb(236, 228, 228);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(200, 200, 200, 0.5) 100%);
     margin-top: 2rem;
     border-radius: 1rem;
     margin-left: 1rem;
-
-    background-color: 'rgb(178, 178, 255)';
     color: black;
     border: 1px solid rgb(51, 50, 50);
- 
+    position: relative;
+    overflow: hidden;
 }
 
-.checkbox{
+@keyframes lightAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.box:before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    animation: lightAnimation 3s infinite linear;
+    opacity: 0.3; /* Adjust for visibility */
+    pointer-events: none; /* Prevents interaction with the overlay */
+}
+
+
+
+
+.checkbox {
     width: 25rem;
     height: 12rem;
-    background-color: rgb(236, 228, 228);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(200, 200, 200, 0.5) 100%);
     margin-top: 2rem;
     border-radius: 1rem;
     margin-left: 1rem;
-
-    background-color: 'rgb(178, 178, 255)';
-  
+    border: 1px solid rgb(51, 50, 50);
+    position: relative;
+    overflow: hidden;
 }
+
+@keyframes lightAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.checkbox:before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    animation: lightAnimation 3s infinite linear;
+    opacity: 0.3; /* Adjust for visibility */
+    pointer-events: none; /* Prevents interaction with the overlay */
+}
+
 
 .subtitle{ 
     font-weight:500;

@@ -152,7 +152,7 @@ const Dashboard = () => {
             </div>
             <hr />
             <div className="alignbtntext">
-              <p>Ready for shipment</p>
+              <p>(preparation set)</p>
               <div className="smalltext" style={{ color: randomNumber1 <= 25 ? 'red' : 'green' }}>↑ {randomNumber1}%</div>
             </div>
           </div>
@@ -164,7 +164,7 @@ const Dashboard = () => {
             <div className="part4">{shipmentQuantity} pcs</div>
             <hr />
             <div className="alignbtntext">
-              <p>Ready for shipment</p>
+              <p>% of prod.</p>
               <div className="smalltext" style={{ color: randomNumber2 <= 25 ? 'red' : 'green' }}>↓ {randomNumber2}%</div>
             </div>
           </div>
@@ -175,7 +175,7 @@ const Dashboard = () => {
             <div className="movepart1">{inventoryLevel}</div>
             <hr />
             <div className="alignbtntext">
-              <p>(state iL type detail)</p>
+              <p>(packaging type)</p>
               <div className="smalltext" style={{ color: randomNumber3 <= 25 ? 'red' : 'green' }}>↕ {randomNumber3}%</div>
             </div>
           </div>

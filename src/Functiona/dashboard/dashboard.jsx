@@ -193,10 +193,12 @@ const Dashboard = () => {
         </nav> 
 
         <div className="alignboxes2">
+         
           <div className="checkbox"
             onDrop={handleDrop}
             onDragOver={handleDragOver}
           >
+             <br /><br /><br /><br /> 
             (Drag & Drop pdf here)
             {pdfFile && <a href={URL.createObjectURL(pdfFile)} target="_blank" rel="noopener noreferrer">View PDF</a>}
           </div>

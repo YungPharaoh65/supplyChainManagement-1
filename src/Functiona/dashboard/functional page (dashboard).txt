@@ -4,7 +4,6 @@ import './dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faCoffee, faHome, faWeight } from '@fortawesome/free-solid-svg-icons';  
 import jsPDF from 'jspdf';
-import { PDFDocument } from 'pdf-lib';
 
 const Dashboard = () => {
   const location = useLocation();
@@ -22,7 +21,6 @@ const Dashboard = () => {
   const [randomNumber1, setRandomNumber1] = useState(0);
   const [randomNumber2, setRandomNumber2] = useState(0);
   const [randomNumber3, setRandomNumber3] = useState(0);
-  const [pdfFile, setPdfFile] = useState(null);
 
   useEffect(() => {
     const generateRandomNumber = () => Math.floor(Math.random() * 46) + 10;
@@ -60,73 +58,6 @@ const Dashboard = () => {
     pdf.save('dashboard_details.pdf');
   };
 
-  const handleDrop = (event) => {
-    event.preventDefault();
-    const file = event.dataTransfer.files[0];
-    if (file && file.type === 'application/pdf') {
-      setPdfFile(file);
-    }
-  };
-
-  const handleDragOver = (event) => {
-    event.preventDefault();
-  };
-
-  const downloadMergedPdf = async () => {
-    if (!pdfFile) {
-      alert('No PDF file to merge.');
-      return;
-    }
-
-    // Create a new PDF document with jsPDF
-    const newPdf = new jsPDF('p', 'pt', 'a4');
-    
-    newPdf.setFontSize(18);
-    newPdf.text('Dashboard Details', 20, 30);
-    
-    newPdf.setFontSize(12);
-    newPdf.text(`Company Name: ${companyName}`, 20, 60);
-    newPdf.text(`Order ID: ${orderID}`, 20, 80);
-    newPdf.text(`Username: ${username}`, 20, 100);
-    newPdf.text(`Supplier Name: ${supplierName}`, 20, 120);
-    newPdf.text(`Shipment Price: R${shipmentPrice}`, 20, 140);
-    newPdf.text(`Inventory Level: ${inventoryLevel}`, 20, 160);
-    newPdf.text(`Shipment Weight: ${shipmentWeight} kg`, 20, 180);
-    newPdf.text(`Shipment Quantity: ${shipmentQuantity} pcs`, 20, 200);
-    newPdf.text(`Ready for Shipments: ↑ ${randomNumber1}%`, 20, 220);
-    newPdf.text(`Avg. Transit Time: ↓ ${randomNumber2}%`, 20, 240);
-    newPdf.text(`Inventory Level Change: ↕ ${randomNumber3}%`, 20, 260);
-
-    // Load the existing PDF with pdf-lib
-    const existingPdfBytes = await pdfFile.arrayBuffer();
-    const existingPdfDoc = await PDFDocument.load(existingPdfBytes);
-
-    // Create a new PDF document with pdf-lib
-    const mergedPdf = await PDFDocument.create();
-    
-    // Copy pages from the existing PDF
-    const [firstPage] = await mergedPdf.copyPages(existingPdfDoc, existingPdfDoc.getPageIndices());
-    firstPage.forEach((page) => mergedPdf.addPage(page));
-    
-    // Add the content from the new PDF
-    const newPdfBytes = await newPdf.output('arraybuffer');
-    const newPdfDoc = await PDFDocument.load(newPdfBytes);
-    const [newPdfPage] = await mergedPdf.copyPages(newPdfDoc, [0]);
-    mergedPdf.addPage(newPdfPage);
-    
-    // Save the merged PDF
-    const mergedPdfBytes = await mergedPdf.save();
-    const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
-
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'dashboard_and_pdf.pdf';
-    link.click();
-
-    URL.revokeObjectURL(url);
-  };
-
   return (
     <div className="dashboard">
       <header className="dashboard-header">
@@ -152,7 +83,7 @@ const Dashboard = () => {
             </div>
             <hr />
             <div className="alignbtntext">
-              <p>Ready for shipment</p>
+              <p>ready for shipment</p>
               <div className="smalltext" style={{ color: randomNumber1 <= 25 ? 'red' : 'green' }}>↑ {randomNumber1}%</div>
             </div>
           </div>
@@ -164,7 +95,7 @@ const Dashboard = () => {
             <div className="part4">{shipmentQuantity} pcs</div>
             <hr />
             <div className="alignbtntext">
-              <p>Ready for shipment</p>
+              <p>ready for shipment</p>
               <div className="smalltext" style={{ color: randomNumber2 <= 25 ? 'red' : 'green' }}>↓ {randomNumber2}%</div>
             </div>
           </div>
@@ -188,9 +119,23 @@ const Dashboard = () => {
           </div> 
           <div className="navbar-right">
             <button className="pdfbtn" onClick={downloadPdf}>Download PDF</button>
-            <button className="pdfbtn" onClick={downloadMergedPdf} disabled={!pdfFile}>Download Merged PDF</button>
           </div>
-        </nav> 
+        </nav>
+      </header>
+    </div>
+  );
+};
+
+export default Dashboard;
+
+
+ 
+          <div className="navbar-right">
+            <button className="pdfbtn" onClick={downloadMergedPdf} disabled={!pdfFile}>
+              Download PDF
+            </button>
+          </div>
+        </nav>
 
         <div className="alignboxes2">
           <div className="checkbox"
@@ -202,9 +147,3 @@ const Dashboard = () => {
           </div>
           <div className="box">Shipment progress <FontAwesomeIcon icon={faCoffee} /></div>
         </div>
-      </header>
-    </div>
-  );
-};
-
-export default Dashboard;

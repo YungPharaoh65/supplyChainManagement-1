@@ -2,7 +2,7 @@
 /*DASHBOARD*//*DASHBOARD*//*DASHBOARD*//*DASHBOARD*/
 /*DASHBOARD*//*DASHBOARD*//*DASHBOARD*//*DASHBOARD*/
 .dashboard-header {
-    background-color: #e2dbdb;
+     
     width: 100%;
     height:38.6rem;
     padding: 10px; 
@@ -90,14 +90,14 @@ margin-top: -2rem;
 
     background-color: 'rgb(178, 178, 255)';
     color: black;
-    border: 1px solid rgb(167, 156, 156);
+    border: 1px solid rgb(51, 50, 50);
  
 }
 
 .checkbox{
     width: 25rem;
     height: 12rem;
-    background-color: rgb(136, 127, 127);
+    background-color: rgb(236, 228, 228);
     margin-top: 2rem;
     border-radius: 1rem;
     margin-left: 1rem;

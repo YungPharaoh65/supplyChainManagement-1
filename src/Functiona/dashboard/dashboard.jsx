@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './dashboard.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';  
 
 const Dashboard = () => {
   const location = useLocation();
@@ -34,15 +36,17 @@ const Dashboard = () => {
 
         <div className="alignboxes">
           <div className="box">
+          <FontAwesomeIcon icon={faCoffee} className="alignfirstrowicons"/>
           <div className="subtitle"> Ready for Shipments:</div> <div className="movepart1"><div className="text1">{shipmentWeight} kg </div>
-
+          
             <div className="part2"> {shipmentQuantity} pcs</div>
              </div>
+             
 <hr />
 <div className="alignbtntext">
  
   <p>ready for shipment</p>
-             <div className="smalltext">⇵ 5%</div>
+             <div className="smalltext">↑ 5%</div>
              </div>
 
           </div>
@@ -56,7 +60,7 @@ const Dashboard = () => {
           <div className="alignbtntext">
  
   <p>ready for shipment</p>
-             <div className="smalltext">⇵ 5%</div>
+             <div className="smalltext">↓ 5%</div>
              </div>
           
           </div>
@@ -67,7 +71,7 @@ const Dashboard = () => {
           <div className="alignbtntext">
  
   <p>(state iL type detail)</p>
-             <div className="smalltext">⇵ 5%</div>
+             <div className="smalltext">↕</div>
              </div>
           </div>
         </div>
@@ -85,10 +89,10 @@ const Dashboard = () => {
 
         <div className="alignboxes2">
           <div className="checkbox">
-            PDF of Delivery Shipments (Drag & Drop from Details.jsx)
+              (Drag & Drop pdf here)
             {pdfFile && <a href={URL.createObjectURL(pdfFile)} target="_blank" rel="noopener noreferrer"> View PDF</a>}
           </div>
-          <div className="box">Shipment progress</div>
+          <div className="box">Shipment progress  <FontAwesomeIcon icon="coffee" /></div>
         </div>
       </header>
     </div>

@@ -83,11 +83,11 @@ const Details = () => {
             <label className="login-label" htmlFor="inventoryLevel">Inventory Level:</label>
             <select className="login-input" id="inventoryLevel" value={inventoryLevel} onChange={(e) => setInventoryLevel(e.target.value)}>
               <option value="">Select Inventory Level</option>
-              <option value="Level 1">Level 1 (Palletized Units)</option>
-              <option value="Level 2">Level 2 (Industrial Crates)</option>
-              <option value="Level 3">Level 3 (Corrugated Shipping Containers)</option>
-              <option value="Level 4">Level 4 (Bulk Storage Drums)</option>
-              <option value="Level 5">Level 5 (FIBCs)</option>
+              <option value="Level 1 (Palletized Units)">Level 1 (Palletized Units)</option>
+              <option value="Level 2 (Industrial Crates)">Level 2 (Industrial Crates)</option>
+              <option value="Level 3 (Corrugated Shipping Containers)">Level 3 (Corrugated Shipping Containers)</option>
+              <option value="Level 4 (Bulk Storage Drums)">Level 4 (Bulk Storage Drums)</option>
+              <option value="Level 5 (FIBCs)">Level 5 (FIBCs)</option>
             </select>
           </div>
         </div>
@@ -105,10 +105,8 @@ const Details = () => {
             <label className="login-label" htmlFor="shipmentPrice">Shipment Price:</label>
             <input className="login-input" type="text" id="shipmentPrice" value={shipmentPrice} onChange={(e) => setShipmentPrice(e.target.value)} />
           </div>
-        </div>
-
-       <input type="file" accept="application/pdf" />
-
+        </div> 
+       
         <button className="login-button" type="submit">Submit</button>
       </form>
     </div>
